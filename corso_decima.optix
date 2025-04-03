@@ -21,24 +21,24 @@ Project:
    Uri: 'urn:FTOptix:HMIProject'
    Module: FTOptix.HMIProject
    Version: 6.5
-  5:
-   Uri: 'urn:FTOptix:NativeUI'
-   Module: FTOptix.NativeUI
-   Version: 2.1
   6:
    Uri: 'urn:FTOptix:Retentivity'
    Module: FTOptix.Retentivity
    Version: 1.0
+  8:
+   Uri: 'urn:FTOptix:WebUI'
+   Module: FTOptix.WebUI
+   Version: 1.2
  Statistics:
-  TotalNodeCount: 118
-  Objects: 67
+  TotalNodeCount: 189
+  Objects: 78
   ObjectTypes: 1
-  Variables: 50
+  Variables: 110
   VariableTypes: 0
   DataTypes: 0
   Methods: 0
-  References: 0
+  References: 5
   ReferenceTypes: 0
-  Files: 21
+  Files: 22
  Nodes:
  - File: Nodes/corso_decima.yaml
