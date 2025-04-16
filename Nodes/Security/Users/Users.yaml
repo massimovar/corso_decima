@@ -1,3 +1,46 @@
 Name: Users
 Id: g=8cdfe95c558e909385d4fe7ddc9a2655
 Type: UsersCategoryFolder
+Children:
+- Name: admin
+  Id: g=7e39eb5ab229d03dfdf08ba37356b440
+  Type: UserType
+  Children:
+  - Name: LocaleId
+    Id: g=439d18bae80685e584ba64bea15e8668
+    Type: BaseVariableType
+    DataType: LocaleId
+    ReferenceType: HasProperty
+    Value: "en-US"
+  - Class: Reference
+    Type: HasGroup
+    Target: g=da507360200b28047e6c608e22dbd25a
+  - Class: Reference
+    Type: HasGroup
+    Target: g=82242cd8f25576679ba65181fe5666b6
+  - Class: Reference
+    Type: HasGroup
+    Target: g=4d42d77e1df81b9c240c6450c4cf3b77
+- Name: operator
+  Id: g=70e4877e81b9da2b8c82783ddfe8d30a
+  Type: UserType
+  Children:
+  - Class: Reference
+    Type: HasGroup
+    Target: g=82242cd8f25576679ba65181fe5666b6
+  - Class: Reference
+    Type: HasGroup
+    Target: g=4d42d77e1df81b9c240c6450c4cf3b77
+  - Name: LocaleId
+    Id: g=ffa8d13834b648a17f482fc65b458d87
+    Type: BaseVariableType
+    DataType: LocaleId
+    ReferenceType: HasProperty
+    Value: "it-IT"
+- Name: maintainer
+  Id: g=003a76d6bf2b165fd183a2aa866c4164
+  Type: UserType
+  Children:
+  - Class: Reference
+    Type: HasGroup
+    Target: g=4d42d77e1df81b9c240c6450c4cf3b77

@@ -9,8 +9,125 @@ Children:
   Value: 
    {
     "Type": 12,
-    "Dimensions": [1,2],
+    "Dimensions": [20,3],
     "Body": [
-     "","en-US"
+     "","en-US","it-IT",
+     "Old password","Old password","",
+     "LoginFormPasswordExpired","Password expired","",
+     "Login","Login","",
+     "New password","New password","",
+     "Password","Password","",
+     "LoginChangePasswordFormPasswordTooShort","Password too short","",
+     "Confirm password","Confirm password","",
+     "Change password","Change password","",
+     "Your password is expired. Please enter a new one","Your password is expired.\nPlease enter a new one.","",
+     "Current User:","Current User:","",
+     "Logout","Logout","",
+     "LoginFormLoginSuccessful","Login successful","",
+     "LoginChangePasswordFormUnsupportedOperation","Unsupported operation","",
+     "LoginFormAuthenticationFailed","Authentication failed","",
+     "LoginChangePasswordFormWrongOldPassword","Wrong old password","",
+     "LoginChangePasswordFormUserNotFound","User not found","",
+     "LoginChangePasswordFormPasswordAlreadyUsed","Password already used","",
+     "LoginChangePasswordFormPasswordChangedTooRecently","Password changed too recently","",
+     "LoginChangePasswordFormPasswordsDoNotMatch","Passwords do not match",""
     ]
    }
+- Name: UIDictionary
+  Id: g=5d4fd2cc0bed2bd30fbe206eb2e9022b
+  Type: LocalizationDictionary
+  DataType: String
+  ValueRank: OneOrMoreDimensions
+  ArrayDimensions: [0,0]
+  Value: 
+   {
+    "Type": 12,
+    "Dimensions": [24,3],
+    "Body": [
+     "","en-US","it-IT",
+     "_machine","Machine","Macchina",
+     "_hi","Hi!","Ciao!",
+     "Traduzioni","Translations","Traduzioni",
+     "_machine1","machine 1","macchina 1",
+     "_machine2","machine 2","macchina 2",
+     "_machine3","machine 3","macchina 3",
+     "_machine4","machine 4","macchina 4",
+     "_machine5","machine 5","macchina 5",
+     "_machine6","machine 6","macchina 6",
+     "_machine7","machine 7","macchina 7",
+     "_machine8","machine 8","macchina 8",
+     "_machine9","machine 9","macchina 9",
+     "_machine10","machine 10","macchina 10",
+     "_machine11","machine 11","macchina 11",
+     "_machine12","machine 12","macchina 12",
+     "_machine13","machine 13","macchina 13",
+     "_machine14","machine 14","macchina 14",
+     "_machine15","machine 15","macchina 15",
+     "_machine16","machine 16","macchina 16",
+     "_machine17","machine 17","macchina 17",
+     "_machine18","machine 18","macchina 18",
+     "_machine19","machine 19","macchina 19",
+     "_machine20","machine 20","macchina 20"
+    ]
+   }
+- Name: AlarmsDictionary
+  Type: LocalizationDictionary
+  DataType: String
+  ValueRank: OneOrMoreDimensions
+  ArrayDimensions: [0,0]
+  Value: 
+   {
+    "Type": 12,
+    "Dimensions": [1,3],
+    "Body": [
+     "","en-US","it-IT"
+    ]
+   }
+- Name: ImportAndExportTranslations
+  Type: NetLogic
+  WriteMask: BrowseName|DataType|Description|DisplayName|MinimumSamplingInterval|UserAccessLevel
+  Children:
+  - Name: BehaviourStartPriority
+    Type: BehaviourStartPriorityVariableType
+    DataType: Byte
+    Value: 180
+  - Name: CSVPath
+    Type: BaseDataVariableType
+    DataType: AbsoluteResourceUri
+    Value: "file:///C:/temp/myTranslations.csv"
+  - Class: Method
+    Name: ExportTranslations
+  - Class: Method
+    Name: ImportTranslations
+  - Name: CharacterSeparator
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ";"
+  - Name: WrapFields
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: LocalizationDictionary
+    Type: NodePointer
+    DataType: NodeId
+    Value: "/Objects/corso_decima/Translations/UIDictionary"
+    Children:
+    - Name: Kind
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Types/VariableTypes/BaseVariableType/LocalizationDictionary"
+  - Name: ns=4;LibraryReference
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 4
+      },
+      "Body": {
+       "libraryGuid": "f0701375ee41467993d632db6a8fdaa5",
+       "objectGuid": "e7cab90d0ab7e8b5b02218e38bca9a0e",
+       "objectVersion": 1,
+       "highestIgnoredVersion": 0
+      }
+     }
