@@ -173,3 +173,8 @@ Children:
     DataType: NodePath
     Value: "../FungoEmergenza"
 - File: VarToLog/VarToLog.yaml
+- File: MyFolder/MyFolder.yaml
+- Name: Variable3
+  Type: BaseDataVariableType
+  DataType: Int32
+- File: ImportedMachines/ImportedMachines.yaml
