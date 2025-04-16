@@ -30,15 +30,15 @@ Project:
    Module: FTOptix.WebUI
    Version: 1.2
  Statistics:
-  TotalNodeCount: 589
-  Objects: 162
-  ObjectTypes: 6
-  Variables: 421
+  TotalNodeCount: 1187
+  Objects: 297
+  ObjectTypes: 11
+  Variables: 879
   VariableTypes: 0
   DataTypes: 0
   Methods: 0
-  References: 7
+  References: 11
   ReferenceTypes: 0
-  Files: 23
+  Files: 26
  Nodes:
  - File: Nodes/corso_decima.yaml

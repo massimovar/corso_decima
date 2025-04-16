@@ -1,0 +1,163 @@
+Name: Machines
+Id: g=db6a4eb0f18b921654fcf574404aa275
+Type: FolderType
+Children:
+- Name: Machine1
+  Id: g=31eff765e95124ace22617738397d587
+  Type: Machine
+  Children:
+  - Name: Quota
+    Type: BaseDataVariableType
+    DataType: UInt16
+  - Name: On
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: Description
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "not set"
+  - Name: Name
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"not set"}
+  - Name: Group
+    Type: BaseDataVariableType
+    DataType: UInt16
+  - Name: MachineNumber
+    Type: BaseDataVariableType
+    DataType: UInt16
+    Value: 10
+  - Name: Cognome
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "TM"
+  - Name: Nome
+    Type: BaseDataVariableType
+    DataType: UInt16
+    Value: 1
+- Name: Machine2
+  Id: g=ea9dceb067051606e02229a2e3b5f189
+  Type: Machine
+  Children:
+  - Name: Quota
+    Type: BaseDataVariableType
+    DataType: UInt16
+  - Name: On
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: Description
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "not set"
+  - Name: Name
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"not set"}
+  - Name: Group
+    Type: BaseDataVariableType
+    DataType: UInt16
+  - Name: MachineNumber
+    Type: BaseDataVariableType
+    DataType: UInt16
+    Value: 11
+  - Name: Cognome
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "TM"
+  - Name: Nome
+    Type: BaseDataVariableType
+    DataType: UInt16
+    Value: 2
+- Name: Machine3
+  Id: g=b066d88ffbc13d3bc09dc65070a5f093
+  Type: Machine
+  Children:
+  - Name: Quota
+    Type: BaseDataVariableType
+    DataType: UInt16
+  - Name: On
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: Description
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "not set"
+  - Name: Name
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"not set"}
+  - Name: Group
+    Type: BaseDataVariableType
+    DataType: UInt16
+  - Name: MachineNumber
+    Type: BaseDataVariableType
+    DataType: UInt16
+  - Name: Cognome
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "not set"
+  - Name: Nome
+    Type: BaseDataVariableType
+    DataType: UInt16
+- Name: Machine4
+  Id: g=12482ff061e4caa6abe85ac32655333f
+  Type: Machine
+  Children:
+  - Name: Quota
+    Type: BaseDataVariableType
+    DataType: UInt16
+  - Name: On
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: Description
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "not set"
+  - Name: Name
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"not set"}
+  - Name: Group
+    Type: BaseDataVariableType
+    DataType: UInt16
+  - Name: MachineNumber
+    Type: BaseDataVariableType
+    DataType: UInt16
+  - Name: Cognome
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "not set"
+  - Name: Nome
+    Type: BaseDataVariableType
+    DataType: UInt16
+- Name: Machine5
+  Id: g=b62b5946699759ffbad277282589528d
+  Type: Machine
+  Children:
+  - Name: Quota
+    Type: BaseDataVariableType
+    DataType: UInt16
+  - Name: On
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: Description
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "not set"
+  - Name: Name
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"not set"}
+  - Name: Group
+    Type: BaseDataVariableType
+    DataType: UInt16
+  - Name: MachineNumber
+    Type: BaseDataVariableType
+    DataType: UInt16
+  - Name: Cognome
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "not set"
+  - Name: Nome
+    Type: BaseDataVariableType
+    DataType: UInt16

@@ -1,0 +1,4 @@
+Name: Widgets
+Type: FolderType
+Children:
+- File: MachinesWidgets/MachinesWidgets.yaml

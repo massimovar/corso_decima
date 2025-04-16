@@ -163,6 +163,16 @@ Children:
     Children:
     - Name: Default
       Type: ScrollBarStyle
+    - Name: MachinesScrollBar
+      Type: ScrollBarStyle
+      Children:
+      - Name: AutoHide
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+      - Name: Size
+        Type: BaseDataVariableType
+        DataType: Size
   - Name: AccordionStyles
     Type: BaseObjectType
     Children:
@@ -183,6 +193,20 @@ Children:
     Children:
     - Name: Default
       Type: LabelStyle
+    - Name: Title
+      Type: LabelStyle
+      Children:
+      - Name: FontSize
+        Type: BaseDataVariableType
+        DataType: Size
+        Value: 20.0
+    - Name: Subtitle
+      Type: LabelStyle
+      Children:
+      - Name: FontSize
+        Type: BaseDataVariableType
+        DataType: Size
+        Value: 15.0
   - Name: RadioButtonStyles
     Type: BaseObjectType
     Children:
@@ -214,7 +238,7 @@ Children:
   - Name: StartWindow
     Type: NodePointer
     DataType: NodeId
-    Value: "/Objects/corso_decima/UI/DecimaApp"
+    Value: "/Objects/corso_decima/UI/DecimaAppSingleScreen"
     Children:
     - Name: Kind
       Type: PropertyType
@@ -324,8 +348,8 @@ Children:
     Type: BaseDataVariableType
     DataType: UInt32
     Value: 3
-- Name: DecimaApp
-  Id: g=01a7e8933afd7c95fe894b0859308138
+- Name: DecimaAppSingleScreen
+  Id: g=1d19034bd00a2ea7faaa7f3c8c9e3d60
   Supertype: Window
   Children:
   - Name: Width
@@ -338,6 +362,69 @@ Children:
     DataType: Size
     ModellingRule: Optional
     Value: 1080.0
+  - Name: PanelLoader1
+    Type: PanelLoader
+    Children:
+    - Name: Panel
+      Type: NodePointer
+      DataType: NodeId
+      Value: "/Objects/corso_decima/UI/Screens/Main"
+      Children:
+      - Name: Kind
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container"
+    - Name: CurrentPanel
+      Type: NodePointer
+      DataType: NodeId
+      AccessLevel: Read
+      Children:
+      - Name: Kind
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item"
+    - Class: Reference
+      Target: ns=3;i=478
+      Direction: Forward
+    - Name: Width
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 300.0
+    - Name: Height
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 300.0
+    - Name: HorizontalAlignment
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 3
+    - Name: VerticalAlignment
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+      Value: 3
+  - Name: FullScreen
+    Type: BaseDataVariableType
+    DataType: Boolean
+    ModellingRule: Optional
+    Value: true
+- Name: DecimaAppDualScreen
+  Id: g=01a7e8933afd7c95fe894b0859308138
+  Supertype: Window
+  Children:
+  - Name: Width
+    Type: BaseDataVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 1920.0
+  - Name: Height
+    Type: BaseDataVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 2160.0
   - Name: Caption
     Type: BaseDataVariableType
     DataType: String
@@ -351,31 +438,19 @@ Children:
     DataType: Boolean
     ModellingRule: Optional
     Value: true
-  - Name: Wrapper
-    Type: GridLayout
+  - Name: VerticalLayout1
+    Type: ColumnLayout
     Children:
     - Name: Width
       Type: BaseVariableType
       DataType: Size
       ModellingRule: Optional
-      Value: 300.0
+      Value: 50.0
     - Name: Height
       Type: BaseVariableType
       DataType: Size
       ModellingRule: Optional
-      Value: 300.0
-    - Name: Rows
-      Type: BaseDataVariableType
-      DataType: String
-      ValueRank: OneDimension
-      ArrayDimensions: [0]
-      Value: ["15fr","85fr"]
-    - Name: Columns
-      Type: BaseDataVariableType
-      DataType: String
-      ValueRank: OneDimension
-      ArrayDimensions: [0]
-      Value: ["80fr","20fr"]
+      Value: 50.0
     - Name: HorizontalAlignment
       Type: BaseVariableType
       DataType: HorizontalAlignment
@@ -386,155 +461,13 @@ Children:
       DataType: VerticalAlignment
       ModellingRule: Optional
       Value: 3
-    - Name: header
-      Type: Screen
-      Children:
-      - Name: BackgroundColor
-        Type: BaseDataVariableType
-        DataType: Color
-        ModellingRule: Optional
-        Value: "#ffa500"
-      - Name: ns=3;GridLayoutProperties
-        Type: GridLayoutProperties
-        DisplayName: {"NamespaceIndex":3,"TextId":"GridLayoutPropertiesDisplayName"}
-        Children:
-        - Name: ColumnStart
-          Type: BaseDataVariableType
-          DataType: Int32
-          ModellingRule: Optional
-        - Name: ColumnSpan
-          Type: BaseDataVariableType
-          DataType: Int32
-          ModellingRule: Optional
-          Value: 2
-        - Name: RowStart
-          Type: BaseDataVariableType
-          DataType: Int32
-          ModellingRule: Optional
-        - Name: RowSpan
-          Type: BaseDataVariableType
-          DataType: Int32
-          ModellingRule: Optional
-          Value: 1
-      - Name: Image1
-        Type: Image
-        Children:
-        - Name: Path
-          Type: BaseDataVariableType
-          DataType: ResourceUri
-          Value: "ns=7;%PROJECTDIR%/icons/home_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
-        - Name: Width
-          Type: BaseVariableType
-          DataType: Size
-          ModellingRule: Optional
-          Value: 160.0
-        - Name: Height
-          Type: BaseVariableType
-          DataType: Size
-          ModellingRule: Optional
-          Value: 50.0
-        - Name: DynamicColor
-          Type: BaseDataVariableType
-          DataType: Color
-          ModellingRule: Optional
-          Value: "#ffffff"
-        - Name: VerticalAlignment
-          Type: BaseVariableType
-          DataType: VerticalAlignment
-          ModellingRule: Optional
-          Value: 3
-        - Name: HorizontalAlignment
-          Type: BaseVariableType
-          DataType: HorizontalAlignment
-          ModellingRule: Optional
-          Value: 1
-        - Name: HitTestVisible
-          Type: BaseDataVariableType
-          DataType: Boolean
-          ModellingRule: Optional
-          Value: true
-        - Name: MouseDownEventHandler1
-          Type: EventHandler
-          Children:
-          - Name: ListenEventType
-            Type: PropertyType
-            DataType: NodeId
-            Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseDownEvent"
-          - Name: MethodsToCall
-            Type: BaseObjectType
-            Children:
-            - Name: MethodContainer1
-              Type: BaseObjectType
-              Children:
-              - Name: ns=2;ObjectPointer
-                Type: NodePointer
-                DataType: NodeId
-                Children:
-                - Name: Kind
-                  Type: PropertyType
-                  DataType: NodeId
-                  Value: "/Types/ObjectTypes/BaseObjectType"
-                - Name: DynamicLink
-                  Type: DynamicLink
-                  DataType: NodePath
-                  Value: "../../../../../../body@NodeId"
-                  Children:
-                  - Name: Mode
-                    Type: BaseVariableType
-                    DataType: DynamicLinkMode
-                    ModellingRule: Optional
-                    Value: 2
-              - Name: ns=2;Method
-                Type: BaseDataVariableType
-                DataType: String
-                Value: "ChangePanel"
-              - Name: InputArguments
-                Type: BaseObjectType
-                Children:
-                - Name: NewPanel
-                  Type: BaseDataVariableType
-                  DataType: NodeId
-                  Description: {"NamespaceIndex":3,"TextId":"ChangePanelNewPanelDescription"}
-                  Value: "/Objects/corso_decima/UI/Screens/Home"
-                - Name: AliasNode
-                  Type: BaseDataVariableType
-                  DataType: NodeId
-                  Description: {"NamespaceIndex":3,"TextId":"ChangePanelAliasNodeDescription"}
-                  ValueRank: ScalarOrOneDimension
-          - Name: EventArguments
-            Type: MouseDownEvent
-            Children:
-            - Name: EventId
-              Type: PropertyType
-              DataType: ByteString
-            - Name: EventType
-              Type: PropertyType
-              DataType: NodeId
-            - Name: SourceNode
-              Type: PropertyType
-              DataType: NodeId
-            - Name: SourceName
-              Type: PropertyType
-              DataType: String
-            - Name: Time
-              Type: PropertyType
-              DataType: UtcTime
-            - Name: ReceiveTime
-              Type: PropertyType
-              DataType: UtcTime
-            - Name: Message
-              Type: PropertyType
-              DataType: LocalizedText
-            - Name: Severity
-              Type: PropertyType
-              DataType: UInt16
-    - Name: body
+    - Name: ScreenA
       Type: PanelLoader
       Children:
       - Name: Panel
         Type: NodePointer
         DataType: NodeId
-        Value: "/Objects/corso_decima/UI/Screens/Home"
+        Value: "/Objects/corso_decima/UI/Screens/Main"
         Children:
         - Name: Kind
           Type: PropertyType
@@ -552,473 +485,70 @@ Children:
       - Class: Reference
         Target: ns=3;i=478
         Direction: Forward
-      - Name: ns=3;GridLayoutProperties
-        Type: GridLayoutProperties
-        DisplayName: {"NamespaceIndex":3,"TextId":"GridLayoutPropertiesDisplayName"}
-        Children:
-        - Name: ColumnStart
-          Type: BaseDataVariableType
-          DataType: Int32
-          ModellingRule: Optional
-        - Name: RowStart
-          Type: BaseDataVariableType
-          DataType: Int32
-          ModellingRule: Optional
-          Value: 1
-      - Name: LeftMargin
-        Type: BaseVariableType
-        DataType: Size
-        ModellingRule: Optional
-      - Name: TopMargin
-        Type: BaseVariableType
-        DataType: Size
-        ModellingRule: Optional
-    - Name: menu
-      Type: Screen
-      Children:
-      - Name: BackgroundColor
-        Type: BaseDataVariableType
-        DataType: Color
-        ModellingRule: Optional
-        Value: "#eeeded"
-      - Name: ns=3;GridLayoutProperties
-        Type: GridLayoutProperties
-        DisplayName: {"NamespaceIndex":3,"TextId":"GridLayoutPropertiesDisplayName"}
-        Children:
-        - Name: ColumnStart
-          Type: BaseDataVariableType
-          DataType: Int32
-          ModellingRule: Optional
-          Value: 1
-        - Name: RowStart
-          Type: BaseDataVariableType
-          DataType: Int32
-          ModellingRule: Optional
-          Value: 1
       - Name: Width
         Type: BaseVariableType
         DataType: Size
         ModellingRule: Optional
-        Value: 720.0
-      - Name: VerticalLayout1
-        Type: ColumnLayout
+        Value: 300.0
+      - Name: Height
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 300.0
+      - Name: HorizontalAlignment
+        Type: BaseVariableType
+        DataType: HorizontalAlignment
+        ModellingRule: Optional
+        Value: 3
+      - Name: VerticalAlignment
+        Type: BaseVariableType
+        DataType: VerticalAlignment
+        ModellingRule: Optional
+        Value: 3
+    - Name: ScreenB
+      Type: PanelLoader
+      Children:
+      - Name: Panel
+        Type: NodePointer
+        DataType: NodeId
+        Value: "/Objects/corso_decima/UI/Screens/Screen2"
         Children:
-        - Name: Width
-          Type: BaseVariableType
-          DataType: Size
-          ModellingRule: Optional
-          Value: 50.0
-        - Name: Height
-          Type: BaseVariableType
-          DataType: Size
-          ModellingRule: Optional
-          Value: 50.0
-        - Name: HorizontalAlignment
-          Type: BaseVariableType
-          DataType: HorizontalAlignment
-          ModellingRule: Optional
-          Value: 3
-        - Name: VerticalAlignment
-          Type: BaseVariableType
-          DataType: VerticalAlignment
-          ModellingRule: Optional
-          Value: 3
-        - Name: VerticalGap
-          Type: BaseDataVariableType
-          DataType: Size
-          ModellingRule: Optional
-          Value: 20.0
-        - Name: Button1
-          Type: Button
-          Children:
-          - Name: Text
-            Type: BaseDataVariableType
-            DataType: LocalizedText
-            ModellingRule: Optional
-            Value: {"LocaleId":"en-US","Text":"home"}
-          - Name: HorizontalAlignment
-            Type: BaseVariableType
-            DataType: HorizontalAlignment
-            ModellingRule: Optional
-            Value: 3
-          - Name: Height
-            Type: BaseVariableType
-            DataType: Size
-            ModellingRule: Optional
-            Value: 78.0
-          - Name: MouseClickEventHandler1
-            Type: EventHandler
-            Children:
-            - Name: ListenEventType
-              Type: PropertyType
-              DataType: NodeId
-              Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
-            - Name: MethodsToCall
-              Type: BaseObjectType
-              Children:
-              - Name: MethodContainer1
-                Type: BaseObjectType
-                Children:
-                - Name: ns=2;ObjectPointer
-                  Type: NodePointer
-                  DataType: NodeId
-                  Children:
-                  - Name: Kind
-                    Type: PropertyType
-                    DataType: NodeId
-                    Value: "/Types/ObjectTypes/BaseObjectType"
-                  - Name: DynamicLink
-                    Type: DynamicLink
-                    DataType: NodePath
-                    Value: "../../../../../../../body@NodeId"
-                    Children:
-                    - Name: Mode
-                      Type: BaseVariableType
-                      DataType: DynamicLinkMode
-                      ModellingRule: Optional
-                      Value: 2
-                - Name: ns=2;Method
-                  Type: BaseDataVariableType
-                  DataType: String
-                  Value: "ChangePanel"
-                - Name: InputArguments
-                  Type: BaseObjectType
-                  Children:
-                  - Name: NewPanel
-                    Type: BaseDataVariableType
-                    DataType: NodeId
-                    Description: {"NamespaceIndex":3,"TextId":"ChangePanelNewPanelDescription"}
-                    Value: "/Objects/corso_decima/UI/Screens/Home"
-                  - Name: AliasNode
-                    Type: BaseDataVariableType
-                    DataType: NodeId
-                    Description: {"NamespaceIndex":3,"TextId":"ChangePanelAliasNodeDescription"}
-                    ValueRank: ScalarOrOneDimension
-            - Name: EventArguments
-              Type: MouseClickEvent
-              Children:
-              - Name: EventId
-                Type: PropertyType
-                DataType: ByteString
-              - Name: EventType
-                Type: PropertyType
-                DataType: NodeId
-              - Name: SourceNode
-                Type: PropertyType
-                DataType: NodeId
-              - Name: SourceName
-                Type: PropertyType
-                DataType: String
-              - Name: Time
-                Type: PropertyType
-                DataType: UtcTime
-              - Name: ReceiveTime
-                Type: PropertyType
-                DataType: UtcTime
-              - Name: Message
-                Type: PropertyType
-                DataType: LocalizedText
-              - Name: Severity
-                Type: PropertyType
-                DataType: UInt16
-        - Name: Button2
-          Type: Button
-          Children:
-          - Name: Text
-            Type: BaseDataVariableType
-            DataType: LocalizedText
-            ModellingRule: Optional
-            Value: {"LocaleId":"en-US","Text":"recipes"}
-          - Name: HorizontalAlignment
-            Type: BaseVariableType
-            DataType: HorizontalAlignment
-            ModellingRule: Optional
-            Value: 3
-          - Name: Height
-            Type: BaseVariableType
-            DataType: Size
-            ModellingRule: Optional
-            Value: 78.0
-          - Name: MouseClickEventHandler1
-            Type: EventHandler
-            Children:
-            - Name: ListenEventType
-              Type: PropertyType
-              DataType: NodeId
-              Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
-            - Name: MethodsToCall
-              Type: BaseObjectType
-              Children:
-              - Name: MethodContainer1
-                Type: BaseObjectType
-                Children:
-                - Name: ns=2;ObjectPointer
-                  Type: NodePointer
-                  DataType: NodeId
-                  Children:
-                  - Name: Kind
-                    Type: PropertyType
-                    DataType: NodeId
-                    Value: "/Types/ObjectTypes/BaseObjectType"
-                  - Name: DynamicLink
-                    Type: DynamicLink
-                    DataType: NodePath
-                    Value: "../../../../../../../body@NodeId"
-                    Children:
-                    - Name: Mode
-                      Type: BaseVariableType
-                      DataType: DynamicLinkMode
-                      ModellingRule: Optional
-                      Value: 2
-                - Name: ns=2;Method
-                  Type: BaseDataVariableType
-                  DataType: String
-                  Value: "ChangePanel"
-                - Name: InputArguments
-                  Type: BaseObjectType
-                  Children:
-                  - Name: NewPanel
-                    Type: BaseDataVariableType
-                    DataType: NodeId
-                    Description: {"NamespaceIndex":3,"TextId":"ChangePanelNewPanelDescription"}
-                    Value: "/Objects/corso_decima/UI/Screens/Screen2"
-                  - Name: AliasNode
-                    Type: BaseDataVariableType
-                    DataType: NodeId
-                    Description: {"NamespaceIndex":3,"TextId":"ChangePanelAliasNodeDescription"}
-                    ValueRank: ScalarOrOneDimension
-            - Name: EventArguments
-              Type: MouseClickEvent
-              Children:
-              - Name: EventId
-                Type: PropertyType
-                DataType: ByteString
-              - Name: EventType
-                Type: PropertyType
-                DataType: NodeId
-              - Name: SourceNode
-                Type: PropertyType
-                DataType: NodeId
-              - Name: SourceName
-                Type: PropertyType
-                DataType: String
-              - Name: Time
-                Type: PropertyType
-                DataType: UtcTime
-              - Name: ReceiveTime
-                Type: PropertyType
-                DataType: UtcTime
-              - Name: Message
-                Type: PropertyType
-                DataType: LocalizedText
-              - Name: Severity
-                Type: PropertyType
-                DataType: UInt16
-        - Name: Button3
-          Type: Button
-          Children:
-          - Name: Text
-            Type: BaseDataVariableType
-            DataType: LocalizedText
-            ModellingRule: Optional
-            Value: {"LocaleId":"en-US","Text":"scroll view"}
-          - Name: HorizontalAlignment
-            Type: BaseVariableType
-            DataType: HorizontalAlignment
-            ModellingRule: Optional
-            Value: 3
-          - Name: Height
-            Type: BaseVariableType
-            DataType: Size
-            ModellingRule: Optional
-            Value: 78.0
-          - Name: MouseClickEventHandler1
-            Type: EventHandler
-            Children:
-            - Name: ListenEventType
-              Type: PropertyType
-              DataType: NodeId
-              Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
-            - Name: MethodsToCall
-              Type: BaseObjectType
-              Children:
-              - Name: MethodContainer1
-                Type: BaseObjectType
-                Children:
-                - Name: ns=2;ObjectPointer
-                  Type: NodePointer
-                  DataType: NodeId
-                  Children:
-                  - Name: Kind
-                    Type: PropertyType
-                    DataType: NodeId
-                    Value: "/Types/ObjectTypes/BaseObjectType"
-                  - Name: DynamicLink
-                    Type: DynamicLink
-                    DataType: NodePath
-                    Value: "../../../../../../../body@NodeId"
-                    Children:
-                    - Name: Mode
-                      Type: BaseVariableType
-                      DataType: DynamicLinkMode
-                      ModellingRule: Optional
-                      Value: 2
-                - Name: ns=2;Method
-                  Type: BaseDataVariableType
-                  DataType: String
-                  Value: "ChangePanel"
-                - Name: InputArguments
-                  Type: BaseObjectType
-                  Children:
-                  - Name: NewPanel
-                    Type: BaseDataVariableType
-                    DataType: NodeId
-                    Description: {"NamespaceIndex":3,"TextId":"ChangePanelNewPanelDescription"}
-                    Value: "/Objects/corso_decima/UI/Screens/Screen3"
-                  - Name: AliasNode
-                    Type: BaseDataVariableType
-                    DataType: NodeId
-                    Description: {"NamespaceIndex":3,"TextId":"ChangePanelAliasNodeDescription"}
-                    ValueRank: ScalarOrOneDimension
-            - Name: EventArguments
-              Type: MouseClickEvent
-              Children:
-              - Name: EventId
-                Type: PropertyType
-                DataType: ByteString
-              - Name: EventType
-                Type: PropertyType
-                DataType: NodeId
-              - Name: SourceNode
-                Type: PropertyType
-                DataType: NodeId
-              - Name: SourceName
-                Type: PropertyType
-                DataType: String
-              - Name: Time
-                Type: PropertyType
-                DataType: UtcTime
-              - Name: ReceiveTime
-                Type: PropertyType
-                DataType: UtcTime
-              - Name: Message
-                Type: PropertyType
-                DataType: LocalizedText
-              - Name: Severity
-                Type: PropertyType
-                DataType: UInt16
-        - Name: Button4
-          Type: Button
-          Children:
-          - Name: Text
-            Type: BaseDataVariableType
-            DataType: LocalizedText
-            ModellingRule: Optional
-            Value: {"LocaleId":"en-US","Text":"screen4"}
-          - Name: HorizontalAlignment
-            Type: BaseVariableType
-            DataType: HorizontalAlignment
-            ModellingRule: Optional
-            Value: 3
-          - Name: Height
-            Type: BaseVariableType
-            DataType: Size
-            ModellingRule: Optional
-            Value: 78.0
-          - Name: MouseClickEventHandler1
-            Type: EventHandler
-            Children:
-            - Name: ListenEventType
-              Type: PropertyType
-              DataType: NodeId
-              Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
-            - Name: MethodsToCall
-              Type: BaseObjectType
-              Children:
-              - Name: MethodContainer1
-                Type: BaseObjectType
-                Children:
-                - Name: ns=2;ObjectPointer
-                  Type: NodePointer
-                  DataType: NodeId
-                  Children:
-                  - Name: Kind
-                    Type: PropertyType
-                    DataType: NodeId
-                    Value: "/Types/ObjectTypes/BaseObjectType"
-                  - Name: DynamicLink
-                    Type: DynamicLink
-                    DataType: NodePath
-                    Value: "../../../../../../../body@NodeId"
-                    Children:
-                    - Name: Mode
-                      Type: BaseVariableType
-                      DataType: DynamicLinkMode
-                      ModellingRule: Optional
-                      Value: 2
-                - Name: ns=2;Method
-                  Type: BaseDataVariableType
-                  DataType: String
-                  Value: "ChangePanel"
-                - Name: InputArguments
-                  Type: BaseObjectType
-                  Children:
-                  - Name: NewPanel
-                    Type: BaseDataVariableType
-                    DataType: NodeId
-                    Description: {"NamespaceIndex":3,"TextId":"ChangePanelNewPanelDescription"}
-                    Value: "/Objects/corso_decima/UI/Screens/Screen4"
-                  - Name: AliasNode
-                    Type: BaseDataVariableType
-                    DataType: NodeId
-                    Description: {"NamespaceIndex":3,"TextId":"ChangePanelAliasNodeDescription"}
-                    ValueRank: ScalarOrOneDimension
-            - Name: EventArguments
-              Type: MouseClickEvent
-              Children:
-              - Name: EventId
-                Type: PropertyType
-                DataType: ByteString
-              - Name: EventType
-                Type: PropertyType
-                DataType: NodeId
-              - Name: SourceNode
-                Type: PropertyType
-                DataType: NodeId
-              - Name: SourceName
-                Type: PropertyType
-                DataType: String
-              - Name: Time
-                Type: PropertyType
-                DataType: UtcTime
-              - Name: ReceiveTime
-                Type: PropertyType
-                DataType: UtcTime
-              - Name: Message
-                Type: PropertyType
-                DataType: LocalizedText
-              - Name: Severity
-                Type: PropertyType
-                DataType: UInt16
-        - Name: LeftMargin
-          Type: BaseVariableType
-          DataType: Size
-          ModellingRule: Optional
-          Value: 10.0
-        - Name: TopMargin
-          Type: BaseVariableType
-          DataType: Size
-          ModellingRule: Optional
-          Value: 10.0
-        - Name: RightMargin
-          Type: BaseVariableType
-          DataType: Size
-          ModellingRule: Optional
-          Value: 10.0
-        - Name: BottomMargin
-          Type: BaseVariableType
-          DataType: Size
-          ModellingRule: Optional
-          Value: 10.0
+        - Name: Kind
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container"
+      - Name: CurrentPanel
+        Type: NodePointer
+        DataType: NodeId
+        AccessLevel: Read
+        Children:
+        - Name: Kind
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item"
+      - Class: Reference
+        Target: ns=3;i=478
+        Direction: Forward
+      - Name: Width
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 300.0
+      - Name: Height
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 300.0
+      - Name: HorizontalAlignment
+        Type: BaseVariableType
+        DataType: HorizontalAlignment
+        ModellingRule: Optional
+        Value: 3
+      - Name: VerticalAlignment
+        Type: BaseVariableType
+        DataType: VerticalAlignment
+        ModellingRule: Optional
+        Value: 3
 - File: Screens/Screens.yaml
 - File: DialogBoxes/DialogBoxes.yaml
+- File: Widgets/Widgets.yaml

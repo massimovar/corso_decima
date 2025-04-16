@@ -2,3 +2,35 @@ Name: Model
 Type: ModelCategoryFolder
 Children:
 - File: MyTestVars/MyTestVars.yaml
+- File: Machines/Machines.yaml
+- Name: Machine
+  Id: g=5f4b0eba2f333656d4db22922b6040c8
+  Supertype: BaseObjectType
+  Children:
+  - Name: Quota
+    Type: BaseDataVariableType
+    DataType: UInt16
+  - Name: On
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: Description
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "not set"
+  - Name: Name
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"not set"}
+  - Name: Group
+    Type: BaseDataVariableType
+    DataType: UInt16
+  - Name: MachineNumber
+    Type: BaseDataVariableType
+    DataType: UInt16
+  - Name: Cognome
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "not set"
+  - Name: Nome
+    Type: BaseDataVariableType
+    DataType: UInt16
