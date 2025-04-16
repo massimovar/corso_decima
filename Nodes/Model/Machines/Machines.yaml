@@ -9,6 +9,7 @@ Children:
   - Name: Quota
     Type: BaseDataVariableType
     DataType: UInt16
+    Value: 20
   - Name: On
     Type: BaseDataVariableType
     DataType: Boolean
@@ -42,6 +43,7 @@ Children:
   - Name: Quota
     Type: BaseDataVariableType
     DataType: UInt16
+    Value: 30
   - Name: On
     Type: BaseDataVariableType
     DataType: Boolean
